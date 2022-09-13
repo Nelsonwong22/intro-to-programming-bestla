@@ -1,0 +1,43 @@
+body{
+ background-image: url("https://static01.nyt.com/images/2022/07/12/multimedia/-12vid-nasa-highlights-video-cover/-12vid-nasa-highlights-video-cover-videoSixteenByNine3000.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ margin: 20px 20px;
+}
+
+.Section{
+    color: white;
+    height: 100%;
+    width: 100%;
+
+    font-size: 24px;
+    border: 2px solid white ;
+}
+
+#NavBar{
+    background: black;
+    font-size: 30px;
+
+}
+
+
+
+#footer{
+
+    color: white;
+    height: 100px;
+    width: 100%;
+    background: black;
+
+    font-size: 20px;
+    border: 2px solid white ;
+}
+
+@media screen and (max-width: 496px) {
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+}
+
+@media screen and (min-width: 900px) {
+}
