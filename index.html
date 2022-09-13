@@ -4,16 +4,10 @@
     <title>My Webpage</title>
 </head>
 
-<footer>
-    
-  </footer> 
-
-<script src="js/index.js"></script> 
-
 <body>
 Nelson Wong  
 
-<section> 
+<section id = "About"> 
 <h1 style="color:black;font-size:30px;">About</h1>
 <p>
     <ul>
@@ -21,25 +15,25 @@ Nelson Wong
         <li>Lives in NYC </li>
     </ul>
 </p>
-<section> 
+</section> 
   
-<section> 
+<section id = "Experience"> 
 <h2 style="color:black;font-size:30px;">Experience</h2>  
 <p>
     <ul>
         <li>I work at a law firm </li>
     </ul>
 </p>                
-<section>        
+</section>         
 
-<section id="skills">
+<section id= "Skills">
         
-        <h2>Skills</h2>
-        <ul></ul>
+    <h2 style="color:black;font-size:30px;">Skills</h2>
+    <ul></ul>
 
-</section>
+</section> 
 
-<section> 
+<section id = "Connect"> 
 <h3 style="color:black;font-size:30px;">Connect</h3>    
 <p>
     <ul>
@@ -47,8 +41,41 @@ Nelson Wong
     <li>https://github.com/Nelsonwong22</li>
     </ul>
 </p> 
-<section> 
+</section>  
+
+<section>
+    <h2>Leave a Message</h2>
+
+    <form name="leave_message">
+
+    <label for="name">Name</label> <br>
+    <input type = "text"  name="name" required> <br>
+    <label for="email">Email Address</label> <br>
+    <input type = "email"  name="email" required> <br>
+    <label for="message">Message</label> <br>
+    <textarea name="message" required></textarea> <br><br>
+
+    <button type="submit">Submit</button>
+    </form>
+</section>
+    
+<section id="messages">
+    <h2>Messages</h2>
+
+
+    <ul></ul>
+</section>
+
+
+<footer>
+    
+</footer> 
+
+<script src="js/index.js"></script> 
 
 </body>
+
+
+
 
 </html>
