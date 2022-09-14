@@ -7,7 +7,7 @@ copyright.innerHTML = `Nelson Wong, ${thisYear}`;
 footer.appendChild(copyright);
 
 let skills = ['JavaScript', 'HTML', 'C++','SQL'];
-let skillsSection = document.getElementById("skills");
+let skillsSection = document.getElementById("Skills");
 let skillsList = skillsSection.querySelector('ul');
 
 for (let i = 0; i < skills.length; i ++) {
@@ -16,32 +16,65 @@ for (let i = 0; i < skills.length; i ++) {
  skillsList.appendChild(skill);
 }
 
-const messageForm = document.getElementsByName("leave_message");
-messageForm.item(0).addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const message = e.target.message.value;
-        console.log(name, email, message);
 
-        const messageSection = document.getElementById('messages');
+
+
+
+let messageForm = document.getElementsByName("leave_message")[0];
+let messageSection = document.getElementById('messages');
+
+    messageSection.hidden = true;
+    messageForm.addEventListener("submit", submitForm);
+    
+    function submitForm(event){
+        event.preventDefault();
+    
+        let name = event.target.name.value;
+        let email = event.target.email.value;
+        let message = event.target.message.value;
+        console.log(name, email, message);
         
-        const messageList = messageSection.querySelector('ul');
-        const newMessage = document.createElement('li'); 
+        let messageList = messageSection.querySelector('ul');
+        let newMessage = document.createElement('li'); 
         newMessage.innerHTML = `<a href="mailto: ${email}"> ${name}</a> wrote: <span>${message}</span>`;
 
         const removeButton = document.createElement('button');
         removeButton.innerText = "remove";
         removeButton.type = "button";
-        removeButton.addEventListener('click', (e) => {
-            const entry = removeButton.parentNode;
-            entry.remove();
-        });
+        removeButton.addEventListener("click", removeMessage);
+    
+        function removeMessage(){
+            let entry = removeButton.parentNode;
+            entry.remove();    
+    }
 
         newMessage.appendChild(removeButton); 
         messageList.appendChild(newMessage);
-         
-        
+        messageSection.hidden = false;    
+        event.target.reset();
+    
+        //hide message list
+        if(messageList== 0) {
+            document.getElementById("messages").style.display = "none";
+        }
+    };
 
-        messageForm.item(0).reset();
-    });
+
+let githubRequest = new XMLHttpRequest();
+githubRequest.open("GET", "https://api.github.com/users/Nelsonwong22/repos");
+githubRequest.send();
+
+
+githubRequest.addEventListener('load', (event) =>{
+    let repositories = JSON.parse(githubRequest.response);
+    console.log(repositories);
+    let projectSection = document.getElementById('projects');
+    let projectList = document.getElementById('projects').querySelector('ul');
+
+// create loop
+    for(let repositories of filteredRepositories){
+        let project = document.createElement("li");
+        project.innerHTML = `<a href="${repositories.html_url}">${repositories.name}</a>`
+        projectList.appendChild(project);
+    }
+})
