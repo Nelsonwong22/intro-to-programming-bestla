@@ -1,3 +1,4 @@
+ lesson-6-1
 const today = new Date ();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
@@ -60,8 +61,6 @@ let messageSection = document.getElementById('messages');
     };
 
 
-/*    
-
 let githubRequest = new XMLHttpRequest();
 githubRequest.open("GET", "https://api.github.com/users/Nelsonwong22/repos");
 githubRequest.send();
@@ -80,22 +79,4 @@ githubRequest.addEventListener('load', (event) =>{
         projectList.appendChild(project);
     }
 })
-
-
-*/
-
-
-fetch('https://api.github.com/users/Nelsonwong22/repos')
-    .then(response => response.json())
-    .then(githubRequest.addEventListener('load', function () {
-        let repositories = JSON.parse(this.response);
-        console.log(repositories);
-        const projectSection = document.getElementById('projects');
-        const projectList = projectSection.querySelector('ul');
-
-        for(let i=0; i < repositories.length; i++) {
-            const project = document.createElement('li');
-            projectList.appendChild(project); 
-        }}
-        
-    ));
+ main
