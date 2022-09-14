@@ -1,3 +1,4 @@
+ lesson-6-1
 const today = new Date ();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
@@ -78,3 +79,4 @@ githubRequest.addEventListener('load', (event) =>{
         projectList.appendChild(project);
     }
 })
+ main
