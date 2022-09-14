@@ -7,7 +7,7 @@ copyright.innerHTML = `Nelson Wong, ${thisYear}`;
 footer.appendChild(copyright);
 
 let skills = ['JavaScript', 'HTML', 'C++','SQL'];
-let skillsSection = document.getElementById("skills");
+let skillsSection = document.getElementById("Skills");
 let skillsList = skillsSection.querySelector('ul');
 
 for (let i = 0; i < skills.length; i ++) {
